@@ -1,5 +1,6 @@
-const App = () => (
-  <div className="App">Hey</div>
-);
+import Catalogue from '../containers/Catalogue';
 
+const App = () => (
+  <Catalogue />
+);
 export default App;
