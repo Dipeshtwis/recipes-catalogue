@@ -12,9 +12,13 @@ code {
     monospace;
 }
 
-header {
+header,
+footer {
   background-color: #212121;
   color: white;
+}
+
+header {
   height: 220px;
 }
 
@@ -24,4 +28,15 @@ header {
 
 .navbar div {
   margin: 30px 40px;
+}
+
+footer {
+  margin-top: 10px; 
+  height: 110px;
+  text-align: center;
+}
+
+.footbar {
+  display: flex;
+  justify-content: space-around;
 }
