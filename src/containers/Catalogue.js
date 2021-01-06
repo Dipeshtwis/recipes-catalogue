@@ -15,6 +15,10 @@ const Catalogue = props => {
     filterRecipes, getCategories, fetchInit, url, fetchSuccess, fetchFailure,
   } = props;
 
+  const handleFilter = e => {
+    filterRecipes(e.target.innerText);
+  };
+
   const handleFetchRecipes = useCallback(() => {
     fetchInit();
 
@@ -30,7 +34,7 @@ const Catalogue = props => {
   return (
     <>
       <Header />
-      <Filter />
+      <Filter handleFilter={handleFilter} />
       <List />
       <Footer />
     </>
