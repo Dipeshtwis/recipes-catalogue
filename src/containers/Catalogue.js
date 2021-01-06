@@ -42,7 +42,7 @@ const Catalogue = props => {
       .catch(() => {
         fetchFailure();
       });
-  }, [url]);
+  }, [url, fetchInit, fetchSuccess, fetchFailure]);
 
   useEffect(() => {
     handleFilterSelect();
@@ -51,6 +51,10 @@ const Catalogue = props => {
   useEffect(() => {
     handleFetchRecipes();
   }, [handleFetchRecipes]);
+
+  useEffect(() => {
+    fetchCategories();
+  }, [fetchCategories]);
 
   return (
     <>
