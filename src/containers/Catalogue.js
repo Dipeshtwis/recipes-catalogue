@@ -6,7 +6,9 @@ import Header from '../components/Header';
 import Filter from '../components/Filter';
 import Footer from '../components/Footer';
 import List from '../components/List';
-import { filterRecipesAction, getCategoriesAction } from '../actions/index';
+import {
+  filterRecipesAction, getCategoriesAction, fetchInitAction, fetchSuccessAction, fetchFailureAction,
+} from '../actions/index';
 
 const Catalogue = props => {
   const {
@@ -53,6 +55,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   filterRecipes: category => dispatch(filterRecipesAction(category)),
   getCategories: categories => dispatch(getCategoriesAction(categories)),
+  fetchInit: () => dispatch(fetchInitAction()),
+  fetchSuccess: data => dispatch(fetchSuccessAction(data)),
+  fetchFailure: () => dispatch(fetchFailureAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Catalogue);
