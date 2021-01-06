@@ -6,7 +6,7 @@ const Footer = () => (
       <div>
         <p>
           Developed By :
-          <a href="https://github.com/Dipeshtwis"> Dipesh</a>
+          <a href="https://github.com/Dipeshtwis" target="_blank" rel="noreferrer"> Dipesh</a>
         </p>
       </div>
       <div><p>Made with Love</p></div>
