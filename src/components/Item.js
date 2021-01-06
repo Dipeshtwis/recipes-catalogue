@@ -11,4 +11,8 @@ const Item = ({ recipe }) => {
   );
 };
 
+Item.propTypes = {
+  recipe: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+};
+
 export default Item;

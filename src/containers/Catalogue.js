@@ -13,7 +13,15 @@ import { API_ID, API_CATEGORY } from '../api/mealdb';
 
 const Catalogue = props => {
   const {
-    filterRecipes, getCategories, fetchInit, url, fetchSuccess, fetchFailure, filter, categories,
+    filterRecipes,
+    getCategories,
+    fetchInit,
+    url,
+    fetchSuccess,
+    fetchFailure,
+    filter,
+    categories,
+    recipes,
   } = props;
 
   const handleFilter = e => {
@@ -60,7 +68,7 @@ const Catalogue = props => {
     <>
       <Header />
       <Filter handleFilter={handleFilter} categories={categories} />
-      <List />
+      <List recipes={recipes} />
       <Footer />
     </>
   );
@@ -81,10 +89,11 @@ Catalogue.propTypes = {
   fetchFailure: PropTypes.func.isRequired,
   filter: PropTypes.string,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  recipes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 const mapStateToProps = state => ({
-  data: state.data,
+  recipes: state.data.recipes,
   categories: state.categories,
   filter: state.filter,
   url: state.url,
