@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
@@ -12,11 +12,15 @@ import {
 
 const Catalogue = props => {
   const {
-    filterRecipes, getCategories, fetchInit, url, fetchSuccess, fetchFailure,
+    filterRecipes, getCategories, fetchInit, url, fetchSuccess, fetchFailure, filter,
   } = props;
 
   const handleFilter = e => {
     filterRecipes(e.target.innerText);
+  };
+
+  const handleFilterSelect = () => {
+    getCategories(filter);
   };
 
   const handleFetchRecipes = useCallback(() => {
@@ -29,7 +33,15 @@ const Catalogue = props => {
       .catch(() => {
         fetchFailure();
       });
-  }, []);
+  }, [url]);
+
+  useEffect(() => {
+    handleFilterSelect();
+  }, [filter]);
+
+  useEffect(() => {
+    handleFetchRecipes();
+  }, [handleFetchRecipes]);
 
   return (
     <>
@@ -48,6 +60,7 @@ Catalogue.propTypes = {
   fetchInit: PropTypes.func.isRequired,
   fetchSuccess: PropTypes.func.isRequired,
   fetchFailure: PropTypes.func.isRequired,
+  filter: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
