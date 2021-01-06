@@ -59,7 +59,7 @@ const Catalogue = props => {
   return (
     <>
       <Header />
-      <Filter handleFilter={handleFilter} />
+      <Filter handleFilter={handleFilter} categories={categories} />
       <List />
       <Footer />
     </>
