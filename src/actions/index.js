@@ -12,8 +12,9 @@ export const fetchInitAction = () => ({
   type: RECIPE_FETCH_INIT,
 });
 
-export const fetchSuccessAction = () => ({
+export const fetchSuccessAction = data => ({
   type: RECIPE_FETCH_SUCCESS,
+  payload: data.meals,
 });
 
 export const fetchFailureAction = () => ({
