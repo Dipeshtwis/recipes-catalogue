@@ -11,6 +11,17 @@ const rootReducer = combineReducers({
   url: apiUrlReducer,
 });
 
-const store = createStore(rootReducer);
+const initialState = {
+  data: {
+    recipes: [],
+    isloading: true,
+    isError: false,
+  },
+  categories: [],
+  filter: '',
+  url: '',
+};
+
+const store = createStore(rootReducer, initialState);
 
 export default store;
