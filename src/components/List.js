@@ -5,14 +5,19 @@ import Item from './Item';
 const List = ({ recipes }) => (
   <div>
     <h2>Category Name</h2>
-    {
-      recipes.map(recipe => {
-        <Item key={recipe.idMeal} recipe={recipe} />;
-      })
-    }
-    <Item />
+    <div>
+      {
+        recipes.map(recipe => (
+          <Item key={recipe.idMeal} recipe={recipe} />
+        ))
+      }
+    </div>
   </div>
 );
+
+List.defaultProps = {
+  recipes: [],
+};
 
 List.PropTypes = {
   recipes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),

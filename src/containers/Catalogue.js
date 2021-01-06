@@ -75,6 +75,7 @@ const Catalogue = props => {
 };
 
 Catalogue.defaultProps = {
+  recipes: [],
   url: '',
   categories: [],
   filter: '',
