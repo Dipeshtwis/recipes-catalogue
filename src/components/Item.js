@@ -1,10 +1,9 @@
 import React from 'react';
-import ingredient from '../assets/img/meatballs.jpg';
 
 const Item = () => (
   <div>
-    <h4>MeatBall</h4>
-    <img src={ingredient} alt="pic" />
+    <h4>themealdb Dish</h4>
+    <img src="https://www.themealdb.com/images/media/meals/1548772327.jpg/preview" alt="pic" />
   </div>
 );
 
