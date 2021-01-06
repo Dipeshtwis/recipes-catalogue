@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Item = () => (
-  <div>
-    <h4>themealdb Dish</h4>
-    <img src="https://www.themealdb.com/images/media/meals/1548772327.jpg/preview" alt="pic" />
-  </div>
-);
+const Item = ({ recipe }) => {
+  const { strMeal, strMealThumb } = recipe;
+  return (
+    <div>
+      <h4>{strMeal}</h4>
+      <img src={`${strMealThumb}`} alt={strMeal} />
+    </div>
+  );
+};
 
 export default Item;
