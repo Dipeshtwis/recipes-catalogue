@@ -66,6 +66,12 @@ const Catalogue = props => {
   );
 };
 
+Catalogue.defaultProps = {
+  url: '',
+  categories: [],
+  filter: '',
+};
+
 Catalogue.propTypes = {
   filterRecipes: PropTypes.func.isRequired,
   getCategories: PropTypes.func.isRequired,
@@ -79,6 +85,7 @@ Catalogue.propTypes = {
 
 const mapStateToProps = state => ({
   data: state.data,
+  categories: state.categories,
   filter: state.filter,
   url: state.url,
 });
