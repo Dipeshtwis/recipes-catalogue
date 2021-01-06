@@ -9,26 +9,35 @@ import List from '../components/List';
 import {
   filterRecipesAction, getCategoriesAction, fetchInitAction, fetchSuccessAction, fetchFailureAction,
 } from '../actions/index';
+import { API_ID, API_CATEGORY } from '../api/mealdb';
 
 const Catalogue = props => {
   const {
-    filterRecipes, getCategories, fetchInit, url, fetchSuccess, fetchFailure, filter,
+    filterRecipes, getCategories, fetchInit, url, fetchSuccess, fetchFailure, filter, categories,
   } = props;
 
   const handleFilter = e => {
     filterRecipes(e.target.innerText);
   };
 
-  const handleFilterSelect = () => {
-    getCategories(filter);
-  };
+  const handleFilterSelect = useCallback(() => {
+    filterRecipes(filter);
+  }, [filter, filterRecipes]);
+
+  const fetchCategories = useCallback(() => {
+    Axios.get(`${API_ID}${API_CATEGORY}`)
+      .then(res => {
+        getCategories(res.data.categories);
+      })
+      .catch(fetchFailure());
+  }, [getCategories, fetchFailure]);
 
   const handleFetchRecipes = useCallback(() => {
     fetchInit();
 
     Axios.get(url)
       .then(res => {
-        fetchSuccess(res);
+        fetchSuccess(res.data);
       })
       .catch(() => {
         fetchFailure();
@@ -61,6 +70,7 @@ Catalogue.propTypes = {
   fetchSuccess: PropTypes.func.isRequired,
   fetchFailure: PropTypes.func.isRequired,
   filter: PropTypes.string,
+  categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 const mapStateToProps = state => ({
