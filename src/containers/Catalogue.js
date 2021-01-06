@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Filter from '../components/Filter';
 import Footer from '../components/Footer';
@@ -17,6 +18,11 @@ const Catalogue = props => {
       <Footer />
     </>
   );
+};
+
+Catalogue.propTypes = {
+  filterRecipes: PropTypes.func.isRequired,
+  getCategories: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
