@@ -20,6 +20,8 @@ const Catalogue = props => {
     filter,
     categories,
     recipes,
+    isError,
+    isLoading,
   } = props;
 
   const handleClick = () => fetchInit();
@@ -65,10 +67,21 @@ const Catalogue = props => {
   }, [fetchCategories]);
 
   return (
-    <>
-      <Filter handleFilter={handleFilter} categories={categories} />
-      <List recipes={recipes} category={filter} handleClick={handleClick} />
-    </>
+    <div>
+      {isError && <p>Something went wrong...</p>}
+      {!filter && <p>Please select a category</p>}
+      {
+        isLoading
+          ? <p>Loading your recipes...</p>
+          : (
+            <Filter
+              handleFilter={handleFilter}
+              categories={categories}
+            />
+          )
+      }
+      {!isLoading && <List recipes={recipes} category={filter} handleClick={handleClick} />}
+    </div>
   );
 };
 
@@ -89,6 +102,8 @@ Catalogue.propTypes = {
   filter: PropTypes.string,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   recipes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  isError: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
