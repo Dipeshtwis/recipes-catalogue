@@ -2,9 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
 import Filter from '../components/Filter';
-import Footer from '../components/Footer';
 import List from '../components/List';
 import {
   filterRecipesAction, getCategoriesAction, fetchInitAction, fetchSuccessAction, fetchFailureAction,
@@ -66,10 +64,8 @@ const Catalogue = props => {
 
   return (
     <>
-      <Header />
       <Filter handleFilter={handleFilter} categories={categories} />
       <List recipes={recipes} category={filter} />
-      <Footer />
     </>
   );
 };
