@@ -90,6 +90,8 @@ Catalogue.defaultProps = {
   url: '',
   categories: [],
   filter: '',
+  isError: false,
+  isLoading: false,
 };
 
 Catalogue.propTypes = {
@@ -102,8 +104,8 @@ Catalogue.propTypes = {
   filter: PropTypes.string,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   recipes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  isError: PropTypes.bool.isRequired,
-  isLoading: PropTypes.bool.isRequired,
+  isError: PropTypes.bool,
+  isLoading: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
