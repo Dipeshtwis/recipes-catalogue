@@ -7,7 +7,7 @@ const List = ({ recipes }) => (
     <h2>Category Name</h2>
     <div>
       {
-        recipes.map(recipe => (
+        recipes && recipes.map(recipe => (
           <Item key={recipe.idMeal} recipe={recipe} />
         ))
       }
@@ -19,7 +19,7 @@ List.defaultProps = {
   recipes: [],
 };
 
-List.PropTypes = {
+List.propTypes = {
   recipes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
