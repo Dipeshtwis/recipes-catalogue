@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
 import {
@@ -8,7 +9,7 @@ import {
 import { API_ID, API_DETAIL } from '../api/mealdb';
 
 const RecipeDetail = props => {
-  const id = '52772';
+  const { id } = useParams();
   const {
     recipe,
     isLoading,
