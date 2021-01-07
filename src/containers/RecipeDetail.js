@@ -76,6 +76,15 @@ const RecipeDetail = props => {
   );
 };
 
+RecipeDetail.propTypes = {
+  recipe: PropTypes.objectOf(Object),
+  isError: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  fetchInit: PropTypes.func.isRequired,
+  fetchSuccess: PropTypes.func.isRequired,
+  fetchFailure: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => ({
   isLoading: state.data.isLoading,
   isError: state.data.isError,
