@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
@@ -10,7 +11,7 @@ const Header = () => (
         </svg>
         <span>Food Lover</span>
       </div>
-      <div><button type="button">Home</button></div>
+      <div><button type="button"><Link to="/">Home</Link></button></div>
     </nav>
   </header>
 );
