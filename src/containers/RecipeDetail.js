@@ -34,14 +34,16 @@ const RecipeDetail = props => {
 
   const ingredients = [];
 
-  !isLoading && Object.entries(recipe).forEach(([key, value]) => {
-    let ingredient = '';
-    if (key.includes('strIngredient') && value) {
-      ingredient = value.split('');
-      ingredient[0] = ingredient[0].toUpperCase();
-      ingredients.push(ingredient.join(''));
-    }
-  });
+  if (!isLoading) {
+    Object.entries(recipe).forEach(([key, value]) => {
+      let ingredient = '';
+      if (key.includes('strIngredient') && value) {
+        ingredient = value.split('');
+        ingredient[0] = ingredient[0].toUpperCase();
+        ingredients.push(ingredient.join(''));
+      }
+    });
+  }
 
   return (
     <>
@@ -74,6 +76,10 @@ const RecipeDetail = props => {
       }
     </>
   );
+};
+
+RecipeDetail.defaultProps = {
+  recipe: {},
 };
 
 RecipeDetail.propTypes = {
