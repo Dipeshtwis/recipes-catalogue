@@ -33,14 +33,16 @@ const RecipeDetail = props => {
   }, [fetchRecipeDetail]);
 
   const ingredients = [];
+  const quantity = [];
 
   if (!isLoading) {
     Object.entries(recipe).forEach(([key, value]) => {
-      let ingredient = '';
       if (key.includes('strIngredient') && value) {
-        ingredient = value.split('');
+        const ingredient = value.split('');
         ingredient[0] = ingredient[0].toUpperCase();
         ingredients.push(ingredient.join(''));
+      } else if (key.includes('strMeasure') && value) {
+        quantity.push(value);
       }
     });
   }
@@ -66,11 +68,26 @@ const RecipeDetail = props => {
                   {recipe.strArea}
                 </li>
               </ul>
-              <ul>
-                {
-                ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)
-              }
-              </ul>
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ingredients</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      ingredients.map((ingredient, i) => (
+                        <tr key={`${ingredient}`}>
+                          <td>{ingredient}</td>
+                          <td>{quantity[i]}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              </div>
             </>
           )
       }

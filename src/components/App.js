@@ -1,6 +1,8 @@
-import RecipeDetail from '../containers/RecipeDetail';
+import Catalogue from '../containers/Catalogue';
 
 const App = () => (
-  <RecipeDetail />
+  <>
+    <Catalogue />
+  </>
 );
 export default App;
