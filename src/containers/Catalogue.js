@@ -22,6 +22,8 @@ const Catalogue = props => {
     recipes,
   } = props;
 
+  const handleClick = () => fetchInit();
+
   const handleFilter = e => {
     filterRecipes(e.target.innerText);
   };
@@ -65,7 +67,7 @@ const Catalogue = props => {
   return (
     <>
       <Filter handleFilter={handleFilter} categories={categories} />
-      <List recipes={recipes} category={filter} />
+      <List recipes={recipes} category={filter} handleClick={handleClick} />
     </>
   );
 };
