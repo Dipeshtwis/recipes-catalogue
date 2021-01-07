@@ -68,7 +68,7 @@ const Catalogue = props => {
     <>
       <Header />
       <Filter handleFilter={handleFilter} categories={categories} />
-      <List recipes={recipes} />
+      <List recipes={recipes} category={filter} />
       <Footer />
     </>
   );
