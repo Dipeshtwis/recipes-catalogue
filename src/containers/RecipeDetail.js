@@ -89,6 +89,8 @@ const RecipeDetail = props => {
                   </tbody>
                 </table>
               </div>
+              <h4>How To Make</h4>
+              <p>{recipe.strInstructions}</p>
             </>
           )
       }
