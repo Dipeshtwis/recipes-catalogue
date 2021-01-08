@@ -4,17 +4,19 @@ import PropTypes from 'prop-types';
 const Filter = ({ handleFilter, categories }) => (
   <>
     <h2>Categories</h2>
-    <div>
+    <div className="category">
       {
         categories.map(category => (
-          <button
-            type="button"
-            key={category.idCategory}
-            onClick={handleFilter}
-            onKeyDown={handleFilter}
-          >
-            {category.strCategory}
-          </button>
+          <div key={category.idCategory}>
+            <button
+              type="button"
+              key={category.idCategory}
+              onClick={handleFilter}
+              onKeyDown={handleFilter}
+            >
+              {category.strCategory}
+            </button>
+          </div>
         ))
       }
     </div>

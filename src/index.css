@@ -24,10 +24,15 @@ header {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .navbar div {
   margin: 30px 40px;
+}
+
+.category {
+  display: flex;
 }
 
 footer {
