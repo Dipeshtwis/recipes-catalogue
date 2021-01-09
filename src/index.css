@@ -27,7 +27,7 @@ footer {
 }
 
 header {
-  height: 220px;
+  height: 120px;
 }
 
 .navbar {
@@ -42,7 +42,12 @@ header {
 .category {
   display: flex;
   flex-wrap: wrap;
-  margin: 5px;
+  margin: 3px 25px;
+}
+
+.category-header {
+  text-align: center;
+  padding: 15px 0;
 }
 
 .category-item {
@@ -50,11 +55,30 @@ header {
   flex-direction: column;
   border: 1px solid #ffbcaf;
   border-radius: 5px;
-  margin: 3px;
+  margin: 5px;
+}
+
+.category-item-header {
+  color: #212121;
+  padding: 3px 2px;
+  word-wrap: break-word;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
 }
 
 .category-img {
-  width: 190px;
+  width: 200px;
+}
+
+.item {
+  padding: 7px;
+  border-radius: 50%;
+}
+
+.item:hover {
+  border: 1px solid #c50e29;
+
 }
 
 .category-button {
@@ -64,7 +88,9 @@ header {
 }
 
 .category-button:hover {
-  border: 2px solid #212121;
+  border: 2px solid #c50e29;
+  transition: padding 0.8s ease-in-out;
+  padding: 3px 0;
 }
 
 footer {

@@ -15,9 +15,10 @@ const Item = ({ recipe, history, handleClick }) => {
       onClick={() => clickRecipe(idMeal)}
       onKeyPress={() => clickRecipe(idMeal)}
       aria-hidden="true"
+      className="category-item"
     >
-      <h4>{strMeal}</h4>
-      <img src={`${strMealThumb}`} alt={strMeal} />
+      <h4 className="category-item-header">{strMeal}</h4>
+      <img src={`${strMealThumb}`} alt={strMeal} className="category-img item" />
     </div>
   );
 };

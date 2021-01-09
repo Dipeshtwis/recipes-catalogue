@@ -4,8 +4,8 @@ import Item from './Item';
 
 const List = ({ recipes, category, handleClick }) => (
   <div>
-    <h2>{category}</h2>
-    <div>
+    <h2 className="category-header">{category}</h2>
+    <div className="category">
       {
         recipes && recipes.map(recipe => (
           <Item key={recipe.idMeal} recipe={recipe} handleClick={handleClick} />
