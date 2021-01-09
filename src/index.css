@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   border: none;
+  text-decoration: none;
 }
 
 body {
@@ -161,11 +162,25 @@ td {
 
 footer {
   margin-top: 10px;
-  height: 70px;
+  height: 50px;
   text-align: center;
 }
 
 .footbar {
   display: flex;
   justify-content: space-around;
+}
+
+.develop-link {
+  color: #ffbcaf;
+}
+
+.develop-link:hover {
+  color: #c50e29;
+}
+
+.footer-para {
+  color: red;
+  font-size: 22px;
+  margin-left: 5px;
 }
