@@ -60,6 +60,29 @@ header {
   font-size: 18px;
 }
 
+.gap {
+  margin: 20px;
+}
+
+.origin {
+  margin-left: 5px;
+  align-self: center;
+  text-align: center;
+}
+
+.lists {
+  font-size: 17px;
+}
+
+.list-item {
+  color: #c50e29;
+}
+
+.span-item {
+  color: #212121;
+  margin-left: 10px;
+}
+
 .category {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +134,21 @@ header {
   border: 2px solid #c50e29;
   transition: padding 0.8s ease-in-out;
   padding: 3px 0;
+}
+
+table {
+  text-align: center;
+  width: 360px;
+  margin: 20px 0;
+  border: 1px solid #c50e29;
+}
+
+th {
+  padding-top: 5px;
+}
+
+td {
+  border-top: 1px solid whitesmoke;
 }
 
 footer {

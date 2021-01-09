@@ -50,29 +50,32 @@ const RecipeDetail = props => {
 
   return (
     <>
-      {isError && <p>Something went wrong ...</p>}
+      {isError && <p className="info">Something went wrong ...</p>}
       {
-        isLoading ? 'Loading Recipe Details...'
+        isLoading ? <p className="info">Loading Recipe Details...</p>
           : (
-            <>
-              <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-              <h2>{recipe.strMeal}</h2>
-              <ul>
-                <li key={recipe.strCategory}>
-                  Category:
-                  {' '}
-                  {recipe.strCategory}
-                </li>
-                <li key={recipe.strArea}>
-                  Origin:
-                  {' '}
-                  {recipe.strArea}
-                </li>
-              </ul>
+            <div className="gap">
+              <h3 className="list-item">
+                Category:
+                <span className="span-item">{recipe.strCategory}</span>
+              </h3>
+              <h3 className="list-item">
+                Origin:
+                <span className="span-item">{recipe.strArea}</span>
+              </h3>
+              <div className="category">
+                <div className="recipe-img">
+                  <img src={recipe.strMealThumb} alt={recipe.strMeal} className="category-img item" />
+                </div>
+                <div className="origin">
+                  <h3 className="list-item">Dish Name:</h3>
+                  <h2 className="category-header">{recipe.strMeal}</h2>
+                </div>
+              </div>
               <div>
                 <table>
                   <thead>
-                    <tr>
+                    <tr className="row">
                       <th>ingredients</th>
                       <th>Quantity</th>
                     </tr>
@@ -80,7 +83,7 @@ const RecipeDetail = props => {
                   <tbody>
                     {
                       ingredients.map((ingredient, i) => (
-                        <tr key={`${ingredient}`}>
+                        <tr className="row" key={`${ingredient}`}>
                           <td>{ingredient}</td>
                           <td>{quantity[i]}</td>
                         </tr>
@@ -91,7 +94,7 @@ const RecipeDetail = props => {
               </div>
               <h4>Instructions</h4>
               <p>{recipe.strInstructions}</p>
-            </>
+            </div>
           )
       }
     </>
