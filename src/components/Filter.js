@@ -7,13 +7,14 @@ const Filter = ({ handleFilter, categories }) => (
     <div className="category">
       {
         categories.map(category => (
-          <div key={category.idCategory}>
-            <img src={category.strCategoryThumb} alt="{category.strCategory}" />
+          <div key={category.idCategory} className="category-item">
+            <img src={category.strCategoryThumb} alt="{category.strCategory}" className="category-img" />
             <button
               type="button"
               key={category.idCategory}
               onClick={handleFilter}
               onKeyDown={handleFilter}
+              className="category-button"
             >
               {category.strCategory}
             </button>

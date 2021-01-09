@@ -1,3 +1,11 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -32,9 +40,31 @@ header {
 }
 
 .category {
-  margin: 20px;
   display: flex;
   flex-wrap: wrap;
+  margin: 5px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ffbcaf;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.category-img {
+  width: 190px;
+}
+
+.category-button {
+  margin-top: 3px;
+  border: 2px solid #dff;
+  border-radius: 10px;
+}
+
+.category-button:hover {
+  border: 2px solid #212121;
 }
 
 footer {
