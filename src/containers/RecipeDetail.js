@@ -92,8 +92,10 @@ const RecipeDetail = props => {
                   </tbody>
                 </table>
               </div>
-              <h4>Instructions</h4>
-              <p>{recipe.strInstructions}</p>
+              <div className="instruct">
+                <h4 className="category-header recipe-header">Instructions</h4>
+                <p>{recipe.strInstructions}</p>
+              </div>
             </div>
           )
       }
