@@ -37,7 +37,7 @@ code {
 
 header,
 footer {
-  background-color: #212121;
+  background-color: #5c6bc0;
   color: white;
 }
 
@@ -47,11 +47,32 @@ header {
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .navbar div {
   margin: 30px 40px;
+}
+
+.logo-name {
+  font-size: 24px;
+}
+
+.logo-word {
+  font-size: 14px;
+  color: #212121;
+}
+
+.home {
+  padding: 8px;
+  border: 2px solid #d50000;
+  border-radius: 35px;
+  background-color: whitesmoke;
+}
+
+.home:hover {
+  border: 2px solid white;
+  background-color: #ffbcaf;
+  color: black;
 }
 
 .info {
@@ -183,4 +204,18 @@ footer {
   color: red;
   font-size: 22px;
   margin-left: 5px;
+}
+
+@media only screen and (max-width: 542px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navbar div {
+    margin: 15px;
+  }
+
+  .logo-word {
+    visibility: hidden;
+  }
 }
