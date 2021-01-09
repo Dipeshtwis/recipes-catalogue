@@ -8,6 +8,7 @@ const Filter = ({ handleFilter, categories }) => (
       {
         categories.map(category => (
           <div key={category.idCategory}>
+            <img src={category.strCategoryThumb} alt="{category.strCategory}" />
             <button
               type="button"
               key={category.idCategory}
