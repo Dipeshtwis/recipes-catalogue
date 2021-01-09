@@ -68,11 +68,11 @@ const Catalogue = props => {
 
   return (
     <div>
-      {isError && <p>Something went wrong...</p>}
-      {!filter && <p>Please select a category</p>}
+      {isError && <p className="info">Something went wrong...</p>}
+      {!filter && <p className="info">Please select a category</p>}
       {
         isLoading
-          ? <p>Loading your recipes...</p>
+          ? <p className="info">Loading your recipes...</p>
           : (
             <Filter
               handleFilter={handleFilter}
