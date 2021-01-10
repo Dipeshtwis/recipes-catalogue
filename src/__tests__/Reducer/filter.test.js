@@ -13,4 +13,4 @@ describe('recipesFilterReducer', () => {
   it('returns an default props (string) if state is undefined and the action is not "FILTER', () => {
     expect(recipesFilterReducer(undefined, { type: 'OTHER' })).toEqual('');
   });
-})
+});
