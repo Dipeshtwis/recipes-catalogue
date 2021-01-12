@@ -83,7 +83,7 @@ const RecipeDetail = props => {
                   <tbody>
                     {
                       ingredients.map((ingredient, i) => (
-                        <tr className="row" key={`${ingredient}`}>
+                        <tr className="row" key={`${ingredient}-${i + 1}`}>
                           <td>{ingredient}</td>
                           <td>{quantity[i]}</td>
                         </tr>
